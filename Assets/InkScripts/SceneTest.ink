@@ -13,3 +13,11 @@ Bai
 
 Ahora estoy deprimida y humilde xd
 No hagan drogas chaviza
+
+* Hacer drogas
+Hiciste drogas
+Chale
+
+* [Hacer drogas con sticky choice]
+Hiciste drogas con sticky choice
+Chale
