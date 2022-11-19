@@ -16,9 +16,16 @@ public class ScriptReader : MonoBehaviour
 
     public Image characterIcon;
 
+    [SerializeField]
+    private GridLayoutGroup choiceHolder;
+
+    [SerializeField]
+    private Button choiceBasePrefab;
+
     void Start()
     {
         LoadStory();
+        DisplayNextLine();
     }
 
     void Update(){
@@ -39,8 +46,45 @@ public class ScriptReader : MonoBehaviour
             text = text?.Trim();
             dialogueBox.text = text;
         }
-        else{
-            dialogueBox.text = "That's all folks";
+        else if(_StoryScript.currentChoices.Count > 0){
+            DisplayChoices();
+        }
+        else {
+            // End of script
+        }
+    }
+
+    private void DisplayChoices() {
+        if(choiceHolder.GetComponentsInChildren<Button>().Length > 0) return;
+
+        for (int i = 0; i < _StoryScript.currentChoices.Count; i++){
+            var choice = _StoryScript.currentChoices[i];
+            var button = CreateChoiceButton(choice.text);
+
+            button.onClick.AddListener(() => OnClickChoiceButton(choice));
+        }
+    }
+
+    Button CreateChoiceButton(string choice) {
+        var choiceButton = Instantiate(choiceBasePrefab);
+        choiceButton.transform.SetParent(choiceHolder.transform, false);
+
+        var buttonText = choiceButton.GetComponentInChildren<TMP_Text>();
+        buttonText.text = choice;
+        return choiceButton;
+    }
+
+    void OnClickChoiceButton(Choice choice) {
+        _StoryScript.ChooseChoiceIndex(choice.index);
+        RefreshChoiceView();
+        DisplayNextLine();
+    }
+
+    void RefreshChoiceView() {
+        if(choiceHolder != null) {
+            foreach(var button in choiceHolder.GetComponentsInChildren<Button>()) {
+                Destroy(button.gameObject);
+            }
         }
     }
 
