@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: aece680b44f096c42932416270084098
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Dr.Marz
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 9d5953e85fcb3d7418216571150187c7, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
