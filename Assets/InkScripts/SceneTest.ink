@@ -1,17 +1,15 @@
 EXTERNAL Name(charName)
+EXTERNAL Icon(iconName)
 
-{Name("Juan")}
+{Name("Monica")}
+{Icon("MonicaIRL")}
 
-Hello there
+Hola
+Estoy deprimida xd
+Se puede ver en mis ojos
+Bai
 
-This is a Text
+{Icon("Monica_Neko")}
 
-And this is too
-
-So good luck
-
-{Name("Vale")}
-
-And I'm Vale UwU
-
-Should have known that from the beginning
+Ahora estoy deprimida y humilde xd
+No hagan drogas chaviza
