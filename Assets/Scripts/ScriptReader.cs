@@ -16,6 +16,8 @@ public class ScriptReader : MonoBehaviour
 
     public Image characterIcon;
     public RawImage background;
+    public Animator animator;
+
 
     [SerializeField]
     private GridLayoutGroup choiceHolder;
@@ -42,6 +44,8 @@ public class ScriptReader : MonoBehaviour
         _StoryScript.BindExternalFunction("Font", (string charFont) => ChangeFont(charFont));
         _StoryScript.BindExternalFunction("Background", (string backgroundImage) => ChangeBackround(backgroundImage));
         _StoryScript.BindExternalFunction("FontStyle", (string fontStyle) => ChangeFontStyle(fontStyle));
+        _StoryScript.BindExternalFunction("FadeIn", (float speed) => TransitionFadeIn(speed));
+        _StoryScript.BindExternalFunction("FadeOut", (float speed) => TransitionFadeOut(speed));
     }
 
     public void DisplayNextLine() {
@@ -128,5 +132,15 @@ public class ScriptReader : MonoBehaviour
         if(style == "Bold") dialogueBox.fontStyle = FontStyles.Bold;
         else dialogueBox.fontStyle = FontStyles.Normal;
 
+    }
+
+    public void TransitionFadeIn(float speed) {
+        animator.speed = speed;
+        animator.SetTrigger("FadeIn");
+    }
+
+    public void TransitionFadeOut(float speed) {
+        animator.speed = speed;
+        animator.SetTrigger("FadeOut");
     }
 }

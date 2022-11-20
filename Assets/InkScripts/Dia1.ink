@@ -3,6 +3,8 @@ EXTERNAL Icon(iconName)
 EXTERNAL Font(fontName)
 EXTERNAL Background(backgroundImage)
 EXTERNAL FontStyle(fontStyle)
+EXTERNAL FadeIn(speed)
+EXTERNAL FadeOut(speed)
 
 {Background("Cuarto")}
 {Font("Monica")}
@@ -30,6 +32,7 @@ Hoy toca desayunar huevito con salchichas, si te portas bien te daré algunas de
 {Name("")}
 \*Ome sale corriendo*
 
+{Name("Monica")}
 {Icon("Monica_IRL")}
 ¡Oh, bueno, a ese no hay que decirle las cosas dos veces!
 Tengo que preparame para bajar a desayunar
@@ -53,9 +56,11 @@ VAR cambio = false
     ~ cambio = true
     Bien, ahora podemos ir a desayunar. -> opciones_limpieza
     * [Salir del cuarto]
-    {dientes and bano and cambio: limpia = true} -> afuera_cuarto
+    {dientes and bano and cambio: limpia = true}
+    {FadeOut(4)} -> afuera_cuarto
     
 == afuera_cuarto
+    {FadeIn(4)}
     -> END
     
 
