@@ -13,10 +13,12 @@ public class characterController : MonoBehaviour
     private bool isJumping = false;
     private bool grounded = true;
     private Animator anim;
+    private float jumpTimeCounter;
+    public float jumpTime;
 
     void walking()
     {
-        float inputMovement = Input.GetAxis("Horizontal");
+        float inputMovement = Input.GetAxisRaw("Horizontal");
         if (inputMovement != 0) anim.SetBool("isRunning", true);
         else anim.SetBool("isRunning", false);
         rbody.velocity = new Vector2(inputMovement*velocity, rbody.velocity.y);
@@ -37,12 +39,30 @@ public class characterController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (grounded && !isJumping)
+            if (grounded)
             {
                 isJumping = true;
+                jumpTimeCounter = jumpTime;
+                grounded = false;
                 anim.SetBool("isJumping", true);
-                rbody.AddForce(Vector2.up * fSalto, ForceMode2D.Impulse);
+                rbody.velocity = Vector2.up * fSalto;
             }
+        }
+        if(Input.GetKeyDown(KeyCode.Space) && isJumping == true) {
+            if(jumpTimeCounter > 0) {
+                rbody.velocity = Vector2.up * fSalto;
+                jumpTimeCounter -= Time.deltaTime;
+                Debug.Log("Entre xd");
+                Debug.Log("Jump Time Counter: " + jumpTimeCounter);
+            }
+            else {
+                isJumping = false;
+                Debug.Log("Sali xd");
+            }
+        }
+        if(Input.GetKeyUp(KeyCode.Space)) {
+            isJumping = false;
+            Debug.Log("Sali por dejar de tocar tecla");
         }
     }
 
@@ -51,7 +71,7 @@ public class characterController : MonoBehaviour
         if (collision.gameObject.tag == "Platform")
         {
             grounded = true;
-            isJumping = false;
+            //isJumping = false;
             anim.SetBool("isJumping", false);
         }
     }
@@ -68,7 +88,38 @@ public class characterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (grounded)
+            {
+                isJumping = true;
+                jumpTimeCounter = jumpTime;
+                grounded = false;
+                anim.SetBool("isJumping", true);
+                rbody.velocity = Vector2.up * fSalto;
+                Debug.Log("Primer if");
+            }
+        }
+        if(Input.GetKey(KeyCode.Space) && isJumping == true) {
+            if(jumpTimeCounter > 0) {
+                rbody.velocity = Vector2.up * fSalto;
+                jumpTimeCounter -= Time.deltaTime;
+                Debug.Log("Entre xd");
+                Debug.Log("Jump Time Counter: " + jumpTimeCounter);
+            }
+            else {
+                isJumping = false;
+                Debug.Log("Sali xd");
+            }
+        }
+        if(Input.GetKeyUp(KeyCode.Space)) {
+            isJumping = false;
+            Debug.Log("Sali por dejar de tocar tecla");
+        }
+        Debug.Log(jumpTimeCounter);
+    }
+
+    void FixedUpdate() {
         walking();
-        saltar();
     }
 }

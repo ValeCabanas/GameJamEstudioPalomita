@@ -676,8 +676,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ed24ea492c4c7845ad46f300e5bef58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 5
-  fSalto: 100
+  velocity: 8
+  fSalto: 10
+  jumpTime: 0.3
 --- !u!61 &442006621
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1091,6 +1092,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 442006619}
   monstruo: {fileID: 631009222}
+  alredyChanged: 0
 --- !u!4 &545976291 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6013773230795159646, guid: 6790933c1be57934fbdf3510b1db88e1, type: 3}
@@ -1210,6 +1212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mVelocity: 5
+  run: 0
 --- !u!95 &631009224
 Animator:
   serializedVersion: 4
