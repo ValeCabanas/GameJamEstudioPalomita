@@ -2,15 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class menuController : MonoBehaviour
 {
 
     public GameObject startButton;
+    public Animator animator;
+    public string nextScene;
 
     public void startNewGame()
     {
-        SceneManager.LoadScene("Noche1");
+        animator.SetTrigger("FadeOut");
+    }
+
+    public void onFadeComplete() {
+        SceneManager.LoadScene(nextScene);
     }
 }

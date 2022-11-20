@@ -15,6 +15,7 @@ public class ScriptReader : MonoBehaviour
     public TMP_Text nameTag;
 
     public Image characterIcon;
+    public RawImage background;
 
     [SerializeField]
     private GridLayoutGroup choiceHolder;
@@ -39,19 +40,32 @@ public class ScriptReader : MonoBehaviour
         _StoryScript.BindExternalFunction("Name", (string charName) => ChangeName(charName));
         _StoryScript.BindExternalFunction("Icon", (string charIcon) => ChangeSprite(charIcon));
         _StoryScript.BindExternalFunction("Font", (string charFont) => ChangeFont(charFont));
+        _StoryScript.BindExternalFunction("Background", (string backgroundImage) => ChangeBackround(backgroundImage));
+        _StoryScript.BindExternalFunction("FontStyle", (string fontStyle) => ChangeFontStyle(fontStyle));
     }
 
     public void DisplayNextLine() {
         if(_StoryScript.canContinue) {
             string text = _StoryScript.Continue();
             text = text?.Trim();
-            dialogueBox.text = text;
+            StopAllCoroutines();
+            StartCoroutine(TypeSentence(text));
         }
         else if(_StoryScript.currentChoices.Count > 0){
             DisplayChoices();
         }
         else {
             // End of script
+        }
+    }
+
+    IEnumerator TypeSentence(string sentence) {
+        dialogueBox.text = "";
+
+        foreach(char letter in sentence) {
+            
+            dialogueBox.text += letter;
+            yield return new WaitForSeconds(0.03F);
         }
     }
 
@@ -102,5 +116,17 @@ public class ScriptReader : MonoBehaviour
     public void ChangeFont(string font) {
         var charFont = Resources.Load<TMP_FontAsset>("Fonts/" + font);
         dialogueBox.font = charFont;
+    }
+
+    public void ChangeBackround(string backgroundImage) {
+        var bgImage = Resources.Load<Texture>("Scenario Backgrounds/" + backgroundImage);
+        background.texture = bgImage;
+    }
+
+    public void ChangeFontStyle(string style) {
+        if(style == "Italic") dialogueBox.fontStyle = FontStyles.Italic;
+        if(style == "Bold") dialogueBox.fontStyle = FontStyles.Bold;
+        else dialogueBox.fontStyle = FontStyles.Normal;
+
     }
 }
