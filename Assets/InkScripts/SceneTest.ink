@@ -3,7 +3,7 @@ EXTERNAL Icon(iconName)
 EXTERNAL Font(fontName)
 
 {Name("Mónica")}
-{Icon("MonicaIRL")}
+{Icon("Monica_IRL")}
 {Font("Monica")}
 
 Hola

@@ -7,7 +7,7 @@ public class monsterController : MonoBehaviour
     public float mVelocity = 3;
 
     private Rigidbody2D mrigidbody;
-    public bool run = false;
+    public bool run;
 
     // Start is called before the first frame update
     void Start()
@@ -21,5 +21,6 @@ public class monsterController : MonoBehaviour
     void Update()
     {
         if(run) mrigidbody.velocity = new Vector2(mVelocity, mrigidbody.velocity.y);
+        else mrigidbody.velocity = new Vector2(0, 0);
     }
 }
