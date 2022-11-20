@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: aece680b44f096c42932416270084098
+guid: 08744d95492380647b52c7fe084f6e8b
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,11 +9,10 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Dr.Marz
-  fallbackFontReferences:
-  - {fileID: 12800000, guid: 9d5953e85fcb3d7418216571150187c7, type: 3}
+  - Mirage Gothic
+  fallbackFontReferences: []
   customCharacters: 
-  fontRenderingMode: 0
+  fontRenderingMode: 2
   ascentCalculationMode: 1
   useLegacyBoundsCalculation: 0
   shouldRoundAdvanceValue: 1

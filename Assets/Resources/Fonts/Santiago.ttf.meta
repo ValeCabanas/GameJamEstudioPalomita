@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9d5953e85fcb3d7418216571150187c7
+guid: c0965236a994ed147af5ae3f6193f814
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,10 +9,10 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Dr.Marz
+  - Kupika
   fallbackFontReferences: []
   customCharacters: 
-  fontRenderingMode: 0
+  fontRenderingMode: 2
   ascentCalculationMode: 1
   useLegacyBoundsCalculation: 0
   shouldRoundAdvanceValue: 1

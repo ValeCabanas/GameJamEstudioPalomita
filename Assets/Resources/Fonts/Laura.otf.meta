@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c1dd7a6afd32e7343a2e2a5f215b3dc0
+guid: 67dafa670e2c8fe43ac07fce76843d22
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,10 +9,10 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Handwriting
+  - Dunkirk
   fallbackFontReferences: []
   customCharacters: 
-  fontRenderingMode: 0
+  fontRenderingMode: 2
   ascentCalculationMode: 1
   useLegacyBoundsCalculation: 0
   shouldRoundAdvanceValue: 1

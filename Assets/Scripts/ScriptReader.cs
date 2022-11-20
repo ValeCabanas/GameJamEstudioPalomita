@@ -38,6 +38,7 @@ public class ScriptReader : MonoBehaviour
         _StoryScript = new Story(_InkJsonFile.text);
         _StoryScript.BindExternalFunction("Name", (string charName) => ChangeName(charName));
         _StoryScript.BindExternalFunction("Icon", (string charIcon) => ChangeSprite(charIcon));
+        _StoryScript.BindExternalFunction("Font", (string charFont) => ChangeFont(charFont));
     }
 
     public void DisplayNextLine() {
@@ -96,5 +97,10 @@ public class ScriptReader : MonoBehaviour
     public void ChangeSprite(string icon) {
         var charIcon = Resources.Load<Sprite>("CharacterSprites/" + icon);
         characterIcon.sprite = charIcon;
+    }
+
+    public void ChangeFont(string font) {
+        var charFont = Resources.Load<TMP_FontAsset>("Fonts/" + font);
+        dialogueBox.font = charFont;
     }
 }

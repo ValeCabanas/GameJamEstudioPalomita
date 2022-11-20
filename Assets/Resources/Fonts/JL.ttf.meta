@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c0965236a994ed147af5ae3f6193f814
+guid: 1ab0e5674e5e6374ebeba4cd8689db2c
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,10 +9,10 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Kupika
+  - Carogna
   fallbackFontReferences: []
   customCharacters: 
-  fontRenderingMode: 0
+  fontRenderingMode: 2
   ascentCalculationMode: 1
   useLegacyBoundsCalculation: 0
   shouldRoundAdvanceValue: 1
