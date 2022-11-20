@@ -25,7 +25,7 @@ public class CameraController : MonoBehaviour
         if (player.transform.position.x < 11.110) np.x = 11.110f;
         if (player.transform.position.x + 0.5f > 150f) np.x = 154f;
 
-        if (player.transform.position.y < -3) np.y = -2f;
+        if (player.transform.position.y < 0) np.y = 1.10f;
         if (player.transform.position.y > 36) np.y = 36f;
 
         transform.position = np;
