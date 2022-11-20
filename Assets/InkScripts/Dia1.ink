@@ -50,18 +50,33 @@ VAR cambio = false
     ~ dientes = true
     El sabor a menta me devuelve la vida -> opciones_limpieza
     * [Ir al baño]
-    ~ dientes = true
+    ~ bano = true
     Uff, me siento mejor. -> opciones_limpieza
     * [Vestirse]
     ~ cambio = true
     Bien, ahora podemos ir a desayunar. -> opciones_limpieza
     * [Salir del cuarto]
-    {dientes and bano and cambio: limpia = true}
-    {FadeOut(4)} -> afuera_cuarto
+    {dientes and bano and cambio: 
+        ~ limpia = true
+    }
+    {FadeOut(2)} -> afuera_cuarto
     
 == afuera_cuarto
-    {FadeIn(4)}
+    {Icon("")}
+    {Background("Pasillo")}
+    {Name("")}
+    {FadeIn(2)}
+    ...
+    {Name("Santiago")}
+    {Icon("Monstruo1/Frame1")}
+    Buenos dias mi Monita.
+    ¿Cómo amaneciste hoy?
+    {not limpia: 
+        Ya veo que algo apestosilla
+        ¿Por qué no vas a alistarte antes de ir a desayunar mi niña?
+    }
     -> END
+    
     
 
 

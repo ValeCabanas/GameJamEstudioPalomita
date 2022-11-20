@@ -113,6 +113,10 @@ public class ScriptReader : MonoBehaviour
     }
 
     public void ChangeSprite(string icon) {
+        if(icon == "") {
+            characterIcon.sprite = null;
+            return;
+        }
         var charIcon = Resources.Load<Sprite>("CharacterSprites/" + icon);
         characterIcon.sprite = charIcon;
     }
@@ -141,6 +145,6 @@ public class ScriptReader : MonoBehaviour
 
     public void TransitionFadeOut(float speed) {
         animator.speed = speed;
-        animator.SetTrigger("FadeOut");
+        animator.SetTrigger("FadeOutScene");
     }
 }
