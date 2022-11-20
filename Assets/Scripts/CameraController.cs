@@ -6,8 +6,6 @@ public class CameraController : MonoBehaviour
 {
 
     public GameObject player;
-    public GameObject monstruo;
-    public bool alredyChanged = false;
 
 
     // Start is called before the first frame update
@@ -17,21 +15,10 @@ public class CameraController : MonoBehaviour
     }
 
 
-    void changeCamera()
-    {
-        float distanceBet = transform.position.x - monstruo.transform.position.x;
-        if(distanceBet > 0) transform.position = new Vector3(transform.position.x - 1 * Time.deltaTime, transform.position.y, transform.position.z);
-        alredyChanged = true;
-    }
 
     // Update is called once per frame
     void Update()
     {
-        if (monstruo.activeSelf && !alredyChanged) 
-        {
-            player = monstruo;
-            changeCamera();
-        } 
 
         Vector3 np = new Vector3(player.transform.position.x + 5, player.transform.position.y + 1,-10);
 
