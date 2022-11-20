@@ -191,8 +191,8 @@ MonoBehaviour:
   m_text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur
     enim ac eleifend interdum. Pellentesque.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2359411299786f64da8ba7c69fe4b295, type: 2}
+  m_sharedMaterial: {fileID: -4875202556039827448, guid: 2359411299786f64da8ba7c69fe4b295, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
