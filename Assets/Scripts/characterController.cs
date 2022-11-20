@@ -30,6 +30,9 @@ public class characterController : MonoBehaviour
     public GameObject cameraGUI;
     private Animator cameraGUIanimator;
 
+
+    public GameObject flash;
+
     [SerializeField]
     private GridLayoutGroup lifeHolder;
 
@@ -92,6 +95,11 @@ public class characterController : MonoBehaviour
             firstGrab = true;
             monster.GetComponent<monsterController>().run = false;
         }
+
+        if(collision.gameObject.tag == "Dientes")
+        {
+            Debug.Log("Game over");
+        }
     }
 
     void inGrab() {
@@ -118,6 +126,8 @@ public class characterController : MonoBehaviour
             if(mashCounter >= mash && timeMashCounter > 0) {
                 // Te libraste
                 cameraGUIanimator.SetBool("isMashed", false);
+                flash.SetActive(true);
+                flash.GetComponent<flashController>().doCameraFlash = true;
                 isGrabbed = false;
                 firstGrab = false;
                 lifeHolder.GetComponent<lifeSpawner>().destroy = true;
