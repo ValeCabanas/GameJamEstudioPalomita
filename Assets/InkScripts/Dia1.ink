@@ -6,30 +6,59 @@ EXTERNAL FontStyle(fontStyle)
 
 {Background("Cuarto")}
 {Font("Monica")}
-{FontStyle("Italic")}
 {Name("")}
 
-Rrrrrrrrring
-Rrrrrrrrring
+\*Rrrrrrrrring*
+\*Rrrrrrrrring*
 
 {Name("Monica")}
 {Icon("Monica/Monica_Ome")}
 
-Bostezo
-
-{FontStyle("Normal")}
+\*Bostezo*
 
 Buenos dias Ome
 Despierta pequeño roñoso
 
-{FontStyle("Italic")}
 {Name("Ome")}
-Grrrr
+\*Grrrr*
 
 {FontStyle("Normal")}
 {Name("Monica")}
 Vamos Ome.
 Hoy toca desayunar huevito con salchichas, si te portas bien te daré algunas de mi plato.
+
+{Name("")}
+\*Ome sale corriendo*
+
+{Icon("Monica_IRL")}
+¡Oh, bueno, a ese no hay que decirle las cosas dos veces!
+Tengo que preparame para bajar a desayunar
+
+VAR limpia = false
+VAR dientes = false
+VAR bano = false
+VAR cambio = false
+
+-> opciones_limpieza
+
+== opciones_limpieza
+
+    * [Lavarse los dientes]
+    ~ dientes = true
+    El sabor a menta me devuelve la vida -> opciones_limpieza
+    * [Ir al baño]
+    ~ dientes = true
+    Uff, me siento mejor. -> opciones_limpieza
+    * [Vestirse]
+    ~ cambio = true
+    Bien, ahora podemos ir a desayunar. -> opciones_limpieza
+    * [Salir del cuarto]
+    {dientes and bano and cambio: limpia = true} -> afuera_cuarto
+    
+== afuera_cuarto
+    -> END
+    
+
 
 
 
