@@ -25,6 +25,9 @@ public class characterController : MonoBehaviour
     public float lifeNum;
     public GameObject monster;
 
+    public GameObject cameraGUI;
+    private Animator cameraGUIanimator;
+
     [SerializeField]
     private GridLayoutGroup lifeHolder;
 
@@ -91,13 +94,16 @@ public class characterController : MonoBehaviour
 
     void inGrab() {
         if(firstGrab) {
-            if(lifeNum >= 1){
+            cameraGUIanimator.SetBool("isMashed", true);
+            if (lifeNum >= 1){
                 lifeNum--;
             }
             else {
                 // Muerte falta de vidas
                 Debug.Log("Game over");
+                cameraGUIanimator.SetBool("isMashed", false);
             }
+            
             mashCounter = 0;
             timeMashCounter = timeMash;
             firstGrab = false;
@@ -109,14 +115,17 @@ public class characterController : MonoBehaviour
             }
             if(mashCounter >= mash && timeMashCounter > 0) {
                 // Te libraste
+                cameraGUIanimator.SetBool("isMashed", false);
                 isGrabbed = false;
                 firstGrab = false;
                 lifeHolder.GetComponent<lifeSpawner>().destroy = true;
                 monster.GetComponent<monsterController>().run = true;
                 transform.position = new Vector2(transform.position.x + 5, transform.position.y);
+
                 
             }
             else if(timeMashCounter <= 0) {
+                cameraGUIanimator.SetBool("isMashed", false);
                 // Muerte a causa de que no le sabe mashear
                 Debug.Log("Game over");
             }
@@ -131,6 +140,8 @@ public class characterController : MonoBehaviour
         anim = GetComponent<Animator>();
         rbody.freezeRotation = true;
         firstGrab = false;
+
+        cameraGUIanimator = cameraGUI.GetComponent<Animator>();
     }
 
     // Update is called once per frame
