@@ -95,6 +95,7 @@ public class characterController : MonoBehaviour
                 lifeNum--;
             }
             else {
+                // Muerte falta de vidas
                 Debug.Log("Game over");
             }
             mashCounter = 0;
@@ -107,6 +108,7 @@ public class characterController : MonoBehaviour
                 mashCounter++;
             }
             if(mashCounter >= mash && timeMashCounter > 0) {
+                // Te libraste
                 isGrabbed = false;
                 firstGrab = false;
                 lifeHolder.GetComponent<lifeSpawner>().destroy = true;
@@ -115,6 +117,7 @@ public class characterController : MonoBehaviour
                 
             }
             else if(timeMashCounter <= 0) {
+                // Muerte a causa de que no le sabe mashear
                 Debug.Log("Game over");
             }
         }
