@@ -25,6 +25,8 @@ public class characterController : MonoBehaviour
     public float lifeNum;
     public GameObject monster;
 
+    public GameObject pauseUI;
+
     public GameObject cameraGUI;
     private Animator cameraGUIanimator;
 
@@ -133,6 +135,28 @@ public class characterController : MonoBehaviour
     }
 
 
+    public void pauseGame() 
+    {
+        Time.timeScale = 0f;
+        AudioListener.pause = true;
+
+        pauseUI.SetActive(true);
+    }
+
+    public void resumeGame()
+    {
+        pauseUI.SetActive(false);
+
+        Time.timeScale = 1;
+        AudioListener.pause = false;
+        
+    }
+
+    void checkIfPaused()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P)) pauseGame();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -147,6 +171,8 @@ public class characterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        checkIfPaused();
+
         if(!isGrabbed){
             saltar();
         }
