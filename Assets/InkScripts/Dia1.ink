@@ -227,8 +227,7 @@ VAR cambio = false
     ...
     ...
     ...
-    {FadeOut(2)}
-    -> aula
+    {FadeOut(2)} -> aula
     
 == aula
     {Icon("")}
