@@ -115,6 +115,7 @@ public class characterController : MonoBehaviour
         {
             //GetComponent<AudioSource>().Stop();
             finalUI.SetActive(true);
+            onEnding = true;
 
         }
     }
