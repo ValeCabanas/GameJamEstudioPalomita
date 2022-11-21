@@ -324,8 +324,50 @@ VAR cambio = false
     Ya Alex...
     Déjalo así...
     
-    {FadeOut(2)}
+    {FadeOut(2)} -> despues_clase
     
+== despues_clase
+    {Icon("")}
+    {Name("")}
+    {Background("EntradaEscuela")}
+    {FadeIn(2)}
+    ...
+    
+    {Name("Monica")}
+    {Icon("Monica/Monica_molesta")}
+    \*Tengo que ir a casa* -> opciones_escuela
+    
+== opciones_escuela
+    
+    * [Esperar a Alex]
+    Tengo que empezar a estar sola… 
+    Alex se va a ir de todos modos… -> opciones_escuela
+    
+    * [Ir a casa]
+    Sera mejor asi...
+    No me gustan las despedidas
+    {FadeOut(2)} -> regreso_casa
+    
+== regreso_casa
+    {Icon("")}
+    {Name("")}
+    {Background("Cuarto")}
+    {FadeIn(2)}
+    ...
+    
+    {Name("Monica")}
+    {Icon("Monica/Monica_Pijama")}
+    No puedo creer que se vaya a ir...
+    No puedo creer que me vaya a quedar sola...
+    No se que hacer... -> opciones_dormir
+    
+== opciones_dormir
+
+    * [Comer algo]
+    No puedo ni comer, me duele el estomago... -> opciones_dormir
+    
+    * [Dormir]
+    Creo que deberia descansar
     
     -> END
     

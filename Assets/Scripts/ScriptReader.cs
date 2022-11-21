@@ -60,6 +60,7 @@ public class ScriptReader : MonoBehaviour
         }
         else {
             // End of script
+            animator.SetTrigger("FadeOut");
         }
     }
 
