@@ -324,7 +324,36 @@ VAR cambio = false
     Ya Alex...
     Déjalo así...
     
-    {FadeOut(2)}
+    {FadeOut(2)} -> despues_clase
+    
+== despues_clase
+    {Icon("")}
+    {Name("")}
+    {Background("")}
+    {FadeIn(2)}
+    ...
+    
+    {Name("Monica")}
+    {Icon("Monica/Monica_molesta")}
+    \*Tengo que ir a casa* -> opciones_escuela
+    
+== opciones_escuela
+    
+    * [Esperar a Alex]
+    Tengo que empezar a estar sola… 
+    Alex se va a ir de todos modos… -> opciones_escuela
+    
+    * [Ir a casa]
+    Sera mejor asi...
+    No me gustan las despedidas
+    {FadeOut(2)} -> regreso_casa
+    
+== regreso_casa
+{Icon("")}
+    {Name("")}
+    {Background("Aula")}
+    {FadeIn(2)}
+    
     
     
     -> END
