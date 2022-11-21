@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class characterController : MonoBehaviour
@@ -99,6 +100,12 @@ public class characterController : MonoBehaviour
         if(collision.gameObject.tag == "Dientes")
         {
             Debug.Log("Game over");
+        }
+
+        if(collision.gameObject.tag == "END")
+        {
+            ////////////////////////////////////////////
+            SceneManager.LoadScene("Main Menu");
         }
     }
 

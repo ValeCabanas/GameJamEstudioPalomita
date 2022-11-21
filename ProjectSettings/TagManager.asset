@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - Monster Trigger
   - Dientes
+  - AlexKiller
+  - Alex
   layers:
   - Default
   - TransparentFX

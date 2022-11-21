@@ -30,6 +30,6 @@ public class CameraController : MonoBehaviour
 
         transform.position = np;
 
-        Debug.Log(transform.position);
+        //Debug.Log(transform.position);
     }
 }
