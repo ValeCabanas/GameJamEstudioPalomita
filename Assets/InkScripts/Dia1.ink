@@ -60,7 +60,7 @@ VAR cambio = false
     {dientes and bano and cambio: 
         ~ limpia = true
     }
-    {not limpia:
+    {not cambio:
         Me voy a cambiar antes de bajar
     }
     {FadeOut(2)} -> afuera_cuarto
@@ -81,7 +81,7 @@ VAR cambio = false
     }
     
     {Name("Monica")}
-    {Icon("Monica_IRL")}
+    {Icon("Monica/Monica_Sonriendo")}
     \*Beso en la mejilla*
     Bien Santito, dormí perfectamente y Ome como siempre no quería despertar, es un gato muy flojo.
     
@@ -100,7 +100,7 @@ VAR cambio = false
     Pero sólo porque tu me lo pides, porque eres mi mejor nietecita.
     
     {Name("Monica")}
-    {Icon("Monica_IRL")}
+    {Icon("Monica/Monica_Sonriendo")}
     Soy tu única nieta Santito.
     
     {Icon("")}
@@ -200,6 +200,132 @@ VAR cambio = false
     {Icon("Alex_IRL")}
     No me quejo, no hay ni frío ni calor
     Está fina esta mañana
+    
+    {Name("Monica")}
+    {Icon("Monica/Monica_Sonriendo")}
+    Tu siempre estás ‘chill’
+    Anda, ya vámonos a la escuela.
+    
+    {Icon("")}
+    {Name("")}
+    ...
+    
+    {Name("Monica")}
+    {Icon("Monica/Monica_molesta")}
+    Alex…
+    ¿Está todo bien...?
+    ¿no te sientes mal o sí?
+    
+    {Name("Alex")}
+    {Icon("Alex_IRL")}
+    No, Moni…
+    Lo que pasa es que tengo algo que decirte…
+    Pero llegando a la escuela te platico
+    
+    {Icon("")}
+    {Name("")}
+    ...
+    ...
+    ...
+    {FadeOut(2)}
+    -> aula
+    
+== aula
+    {Icon("")}
+    {Name("")}
+    {Background("Aula")}
+    {FadeIn(2)}
+    ...
+    
+    {Name("Monica")}
+    {Icon("Monica/Monica_molesta")}
+    Alex… ¿Ya puedes decirme por favor lo que pasa?
+    Me siento hasta mal porque siento que hice algo que te molestó…
+    
+    {Name("Alex")}
+    {Icon("Alex_IRL")}
+    No, no es nada de eso...
+    Es sólo que...
+    Tengo que decirte algo que a mi me duele mucho y no sé cómo decírtelo.
+    
+    {Name("Monica")}
+    {Icon("Monica/Monica_molesta")}
+    Cómo es
+    El golpe no es más suave porque me lo adornes si es algo que sabes que me va a doler…
+    
+    {Name("Alex")}
+    {Icon("Alex_IRL")}
+    Bueno...
+    Que conste que tu fuiste la que me dijo que te dijera así de sopetón.
+    
+    {Name("Monica")}
+    {Icon("Monica/Monica_molesta")}
+    Hmmm… sí
+    Pero dime qué sucede.
+    
+    {Name("Alex")}
+    {Icon("Alex_IRL")}
+    ...
+    Me voy a mudar Moni
+    A mi papá no le está yendo bien en su trabajo y lo van a trasladar a otro estado…
+
+    {Name("Monica")}
+    {Icon("Monica/Monica_molesta")}
+    ...
+    Alex…
+    {Icon("Monica/Monica_Sonriendo")}
+    Ese tipo de bromas tan pesadas no son divertidas…
+    {Icon("Monica/Monica_molesta")}
+    Ya deberías saberlo…
+    
+    {Name("Alex")}
+    {Icon("Alex_IRL")}
+    No, Moni, es de verdad.
+    No sabía cómo decírtelo
+    Me siento igual que cuando salí del clóset, yo también estoy muy triste y asustade.
+    
+    
+    {Name("Monica")}
+    {Icon("Monica/Monica_molesta")}
+    Pero… entonces
+    {Icon("Monica/Monica_Asustada")}
+    ¿C-Cuándo nos volveremos a ver, te voy a volver a ver siquiera?
+    
+    {Name("Alex")}
+    {Icon("Alex_IRL")}
+    Yo…
+    Espero que podamos venir a visitar a tu familia 
+    Espero poder verte todos los años al menos una vez al año…
+    Y a parte podremos mensajearnos todavia
+    ... podriamos ... a otros ... juntos
+    Tendras mas ... tus cosas ...
+    ... ... estara bien ...
+    
+    {Name("Monica")}
+    {Icon("Monica/Monica_Asustada")}
+    \*Tranquila*
+    \*Respira*
+    \*Inhala*
+    \*Exhala*
+    \*Inhala*
+    \*Exhala*
+    
+    {Icon("Monica/Monica_molesta")}
+    Alex, ¿Podemos terminar la conversación en otro momento? 
+    No quiero seguir hablando de esto ahora, no me siento bien…
+    
+    {Name("Alex")}
+    {Icon("Alex_IRL")}
+    Perdón Moni, no es mi intención lastimarte...
+    Sólo comunicarte lo que está pasando en mi vida...
+    
+    {Name("Monica")}
+    {Icon("Monica/Monica_molesta")}
+    Ya Alex...
+    Déjalo así...
+    
+    {FadeOut(2)}
+    
     
     -> END
     
