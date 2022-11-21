@@ -38,6 +38,8 @@ public class alexController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+
         Time.timeScale = 0f;
         alexTutorialMove.SetActive(true);
         tutorial = 1;

@@ -34,8 +34,12 @@ public class characterController : MonoBehaviour
     public GameObject introductionUI;
     public GameObject alex;
 
-    private bool onIntro;
+    public GameObject finalUI;
 
+    public Animator transitionsAnimator;
+
+    private bool onIntro;
+    private bool onEnding;
 
     public GameObject flash;
 
@@ -109,8 +113,9 @@ public class characterController : MonoBehaviour
 
         if(collision.gameObject.tag == "END")
         {
-            ////////////////////////////////////////////
-            SceneManager.LoadScene("Main Menu");
+            //GetComponent<AudioSource>().Stop();
+            finalUI.SetActive(true);
+
         }
     }
 
@@ -189,8 +194,9 @@ public class characterController : MonoBehaviour
 
         cameraGUIanimator = cameraGUI.GetComponent<Animator>();
 
+        transitionsAnimator.SetTrigger("FadeIn");
 
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
         introductionUI.SetActive(true);
         onIntro = true;
         
@@ -214,7 +220,17 @@ public class characterController : MonoBehaviour
                 inGrab();
             }
         }
-        else
+        if (onEnding)
+        {
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                ////////////////////////////////////////////
+                transitionsAnimator.SetTrigger("FadeOut");
+                //SceneManager.LoadScene("Main Menu");
+            }
+        }
+        if(onIntro)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
