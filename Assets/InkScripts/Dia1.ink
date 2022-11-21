@@ -329,7 +329,7 @@ VAR cambio = false
 == despues_clase
     {Icon("")}
     {Name("")}
-    {Background("")}
+    {Background("EntradaEscuela")}
     {FadeIn(2)}
     ...
     
@@ -349,12 +349,25 @@ VAR cambio = false
     {FadeOut(2)} -> regreso_casa
     
 == regreso_casa
-{Icon("")}
+    {Icon("")}
     {Name("")}
-    {Background("Aula")}
+    {Background("Cuarto")}
     {FadeIn(2)}
+    ...
     
+    {Name("Monica")}
+    {Icon("Monica/Monica_Pijama")}
+    No puedo creer que se vaya a ir...
+    No puedo creer que me vaya a quedar sola...
+    No se que hacer... -> opciones_dormir
     
+== opciones_dormir
+
+    * [Comer algo]
+    No puedo ni comer, me duele el estomago... -> opciones_dormir
+    
+    * [Dormir]
+    Creo que deberia descansar
     
     -> END
     

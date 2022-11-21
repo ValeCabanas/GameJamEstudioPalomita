@@ -1014,6 +1014,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1099761518}
     m_Modifications:
+    - target: {fileID: 6379190742146056131, guid: 412d01543f1ea5541b10fb31d99f0abb, type: 3}
+      propertyPath: nextScene
+      value: Noche1
+      objectReference: {fileID: 0}
     - target: {fileID: 6379190742146056140, guid: 412d01543f1ea5541b10fb31d99f0abb, type: 3}
       propertyPath: m_Name
       value: Transition
