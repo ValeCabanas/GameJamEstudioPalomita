@@ -31,6 +31,11 @@ public class characterController : MonoBehaviour
     public GameObject cameraGUI;
     private Animator cameraGUIanimator;
 
+    public GameObject introductionUI;
+    public GameObject alex;
+
+    private bool onIntro;
+
 
     public GameObject flash;
 
@@ -183,19 +188,44 @@ public class characterController : MonoBehaviour
         firstGrab = false;
 
         cameraGUIanimator = cameraGUI.GetComponent<Animator>();
+
+
+        Time.timeScale = 0f;
+        introductionUI.SetActive(true);
+        onIntro = true;
+        
+
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        checkIfPaused();
+        if (!onIntro)
+        {
+            checkIfPaused();
 
-        if(!isGrabbed){
-            saltar();
+            if (!isGrabbed)
+            {
+                saltar();
+            }
+            else
+            {
+                inGrab();
+            }
         }
-        else {
-            inGrab();
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Time.timeScale = 1f;
+                introductionUI.SetActive(false);
+                GetComponent<AudioSource>().Play();
+                onIntro = false;
+                alex.SetActive(true);
+            }
         }
+        
     }
 
     void FixedUpdate() {

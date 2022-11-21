@@ -67,7 +67,7 @@ public class alexController : MonoBehaviour
                 case 3:
                     alexDeathUI.SetActive(false);
                     dying = true;
-                    transform.position = new Vector2(transform.position.x + 2, transform.position.y);
+                    transform.position = new Vector2(165f, transform.position.y);
                     break;
             }
 
